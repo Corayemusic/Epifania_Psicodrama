@@ -1,0 +1,69 @@
+---
+const teamMembers = [
+  {
+    name: "Lic. Efi Bezi",
+    description:
+      "Psicóloga, artista. Especialista en Psicodrama y Arteterapia.",
+    country: "Argentina",
+    image: "/path/to/image-efi.jpg", // Reemplaza con la ruta de la imagen
+    socials: [
+      { platform: "facebook", link: "https://facebook.com" },
+      { platform: "linkedin", link: "https://linkedin.com" },
+      { platform: "instagram", link: "https://instagram.com" },
+    ],
+  },
+  {
+    name: "Dra. Nelly López Azuz",
+    description:
+      "Psicóloga, antropóloga. Experta en Sociodrama, Psicodrama e Inteligencia Espiritual.",
+    country: "México",
+    image: "/path/to/image-nelly.jpg", // Reemplaza con la ruta de la imagen
+    socials: [
+      { platform: "facebook", link: "https://facebook.com" },
+      { platform: "linkedin", link: "https://linkedin.com" },
+      { platform: "instagram", link: "https://instagram.com" },
+    ],
+  },
+];
+---
+
+<section class="bg-purple-500 py-12 text-white">
+  <div class="container mx-auto px-4">
+    <h2 class="text-center text-4xl font-bold mb-6">¿QUIÉNES SOMOS?</h2>
+    <p class="text-center max-w-3xl mx-auto mb-12">
+      Somos un colectivo de psicólogas, antropólogas, socio y psicodramatistas
+      especializadas en diversas ramas de la salud emocional, social y
+      organizacional. Creamos diseños personalizados, atención Online,
+      presencial y mixta. Brindamos un acompañamiento cercano, profesional e
+      íntegro a las personas.
+    </p>
+    <div class="grid gap-8 sm:grid-cols-2">
+      {teamMembers.map((member) => (
+        <div class="bg-white text-black rounded-lg shadow-lg overflow-hidden">
+          <img
+            src={member.image}
+            alt={`Foto de ${member.name}`}
+            class="w-full h-64 object-cover"
+          />
+          <div class="p-6 text-center">
+            <h3 class="text-xl font-bold mb-2">{member.name}</h3>
+            <p class="text-sm">{member.description}</p>
+            <p class="text-sm font-bold mt-2">({member.country})</p>
+            <div class="mt-4 flex justify-center gap-4">
+              {member.socials.map((social) => (
+                <a
+                  href={social.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-purple-500 hover:text-purple-700"
+                >
+                  <i class={`fab fa-${social.platform} text-lg`}></i>
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

@@ -3,6 +3,7 @@ import { Icon } from "astro-icon/components";
 import HeroImage from "~/components/hero-image.astro";
 import type { FooterLink } from "~/types";
 import ContactForm from "~/components/ContactForm.astro";
+import TeamSection from "~/components/TeamSection.astro";
 
 const links: Array<FooterLink> = [
   {
@@ -27,6 +28,7 @@ const links: Array<FooterLink> = [
   },
 ];
 ---
+<TeamSection />
 <ContactForm />
 <footer class="relative flex h-64 items-center justify-center">
   <div class="absolute inset-0 overflow-hidden opacity-40">

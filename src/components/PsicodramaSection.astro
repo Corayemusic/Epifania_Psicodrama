@@ -1,6 +1,6 @@
 ---
 import { Image } from "astro:assets";
-
+import astronautImage from '~/assets/astronaut.png';
 
 const title = "Psicodrama Psicoterapéutico e Inteligencia Espiritual";
 const description = `
@@ -21,7 +21,7 @@ const workshop = {
   modality: "Presencial o vía ZOOM.",
 };
 
-const image = "~/assets/astronaut.png"; // Reemplaza con la ruta de tu imagen
+const image = astronautImage; // Uso de la importación
 ---
 
 <section class="space-y-8">
@@ -41,3 +41,4 @@ const image = "~/assets/astronaut.png"; // Reemplaza con la ruta de tu imagen
     </div>
   </div>
 </section>
+

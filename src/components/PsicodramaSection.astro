@@ -1,5 +1,6 @@
 ---
-import astronautImage from "~/assets/astronaut.png";
+import { Image } from "astro:assets";
+import astronautImage from '../assets/astronaut.png'; // Ruta de la imagen en la carpeta assets
 
 const title = "Psicodrama Psicoterapéutico e Inteligencia Espiritual";
 const description = `
@@ -19,6 +20,9 @@ const workshop = {
   duration: "2 horas una sesión semanal (Ciclo de 8 sesiones)",
   modality: "Presencial o vía ZOOM.",
 };
+
+const widths = [320, 640, 1280]; // Resoluciones deseadas
+const sizes = '(max-width: 768px) 100vw, 50vw'; // Configuración responsiva
 ---
 
 <section class="space-y-8">
@@ -34,9 +38,17 @@ const workshop = {
       <p><span class="font-bold">Modalidad:</span> {workshop.modality}</p>
     </div>
     <div>
-      <img class="rounded-lg shadow-lg" src={astronautImage} alt="Imagen representativa del taller" />
+      <Image
+        class="h-full w-full object-cover rounded-lg shadow-lg"
+        src={astronautImage}
+        widths={widths}
+        sizes={sizes}
+        loading="eager"
+        alt="A floating astronaut in a space suit"
+      />
     </div>
   </div>
 </section>
+
 
 

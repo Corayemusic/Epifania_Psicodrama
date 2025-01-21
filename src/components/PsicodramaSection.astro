@@ -1,0 +1,40 @@
+---
+const title = "Psicodrama Psicoterapéutico e Inteligencia Espiritual";
+const description = `
+Uso del método del psicodrama en remoto y presencial, en diferentes espacios de sanación vincular, utilizando el factor de espontaneidad/creatividad para lograr un equilibrio cuerpo, mente y espíritu gestionando las emociones. Integrando historias transgeneracionales, liberando patrones que bloquean la expansión personal, para ello se utiliza también la inteligencia espiritual para trascender el ego conectando con la esencia.
+
+Primera sesión de psicoterapia bipersonal sin costo.
+`;
+
+const workshop = {
+  title: "Taller de Crecimiento Interior:",
+  objective: `
+    Experimentar el desarrollo personal en grupalidad y adquirir estrategias para tu autoobservación y autoexploración.
+  `,
+  audience: `
+    A ti que quieres mejorar algún aspecto de ti mism@. Si trabajas atendiendo a otras personas, esto es IDEAL para ti.
+  `,
+  duration: "2 horas una sesión semanal (Ciclo de 8 sesiones)",
+  modality: "Presencial o vía ZOOM.",
+};
+
+const image = "/path-to-your-image.jpg"; // Reemplaza con la ruta de tu imagen
+---
+
+<section class="space-y-8">
+  <h2 class="text-3xl font-bold text-center text-primary">{title}</h2>
+  <p class="text-lg text-center text-offset max-w-prose mx-auto">{description}</p>
+  
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+    <div>
+      <h3 class="text-2xl font-semibold text-primary">{workshop.title}</h3>
+      <p><span class="font-bold">Objetivo:</span> {workshop.objective}</p>
+      <p><span class="font-bold">Dirigido:</span> {workshop.audience}</p>
+      <p><span class="font-bold">Duración:</span> {workshop.duration}</p>
+      <p><span class="font-bold">Modalidad:</span> {workshop.modality}</p>
+    </div>
+    <div>
+      <img class="rounded-lg shadow-lg" src={image} alt="Imagen representativa del taller" />
+    </div>
+  </div>
+</section>

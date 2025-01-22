@@ -1,51 +1,52 @@
 ---
 import { Image } from "astro:assets";
-import workshopImage from '../assets/workshop-image.png'; // Ruta de la imagen
+import astronautImage from '../assets/astronaut.png'; // Ruta de la imagen en la carpeta assets
 
-const title = "Psicodrama Pedagógico";
+const title = "Psicodrama Psicoterapéutico e Inteligencia Espiritual";
 const description = `
-Aprender el método del psicodrama en remoto y/o presencial, para posibilitar una formación integral aplicable al ámbito de la salud: psicoterapéuticos, holísticos, tanatológicos, etc. Ámbito de la educación: escuelas, universidades, organizaciones; Ámbito comunitario: gestores culturales y comunitarios.
-Articulando teoría-práctica en las dimensiones racionales y afectivas presentes en el proceso de enseñanza-aprendizaje. Construcción del conocimiento a nivel individual, colectivo e interpersonal.
+Uso del método del psicodrama en remoto y presencial, en diferentes espacios de sanación vincular, utilizando el factor de espontaneidad/creatividad para lograr un equilibrio cuerpo, mente y espíritu gestionando las emociones. Integrando historias transgeneracionales, liberando patrones que bloquean la expansión personal, para ello se utiliza también la inteligencia espiritual para trascender el ego conectando con la esencia.
+
+Primera sesión de psicoterapia bipersonal sin costo.
 `;
 
 const workshop = {
-  title: "Taller de Herramientas Creativas con Psicodrama para Tanatólog@s",
+  title: "Taller de Crecimiento Interior:",
   objective: `
-    Conocer sobre la historia del psicodrama, sus metodologías y experimentar de manera vivencial, para aprender y expandir los recursos creativos terapéuticos grupales. Para ser utilizados en espacios presenciales o virtuales (Zoom).
+    Experimentar el desarrollo personal en grupalidad y adquirir estrategias para tu autoobservación y autoexploración.
   `,
   audience: `
-    Tanatólog@s experimentados, terapeutas, psicólog@s, estudiantes de tanatología, logoterapia y psicología, personas que acompañan a otras en sus procesos emocionales o realizan actividades afines.
+    A ti que quieres mejorar algún aspecto de ti mism@. Si trabajas atendiendo a otras personas, esto es IDEAL para ti.
   `,
-  duration: "9 horas (3 horas por sesión semanal)",
-  modality: "Opcional híbrido, presencial o vía ZOOM.",
+  duration: "2 horas una sesión semanal (Ciclo de 8 sesiones)",
+  modality: "Presencial o vía ZOOM.",
 };
 
 const widths = [320, 640, 1280]; // Resoluciones deseadas
 const sizes = '(max-width: 768px) 100vw, 50vw'; // Configuración responsiva
 ---
 
-<section class="space-y-8 px-4 md:px-8 bg-purple-100 py-12">
-  <h2 class="text-3xl font-bold text-center text-purple-800">{title}</h2>
-  <p class="text-lg text-center text-purple-700 max-w-prose mx-auto">{description}</p>
+<section class="space-y-8 px-4 md:px-8">
+  <h2 class="text-3xl font-bold text-center text-primary">{title}</h2>
+  <p class="text-lg text-center text-offset max-w-prose mx-auto">{description}</p>
   
   <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
     <!-- Contenedor del texto -->
-    <div class="space-y-6 md:pl-6">
-      <h3 class="text-2xl font-semibold text-purple-800">{workshop.title}</h3>
+    <div class="space-y-6 md:pl-6"> <!-- Usamos padding-left para margen interno en pantallas medianas -->
+      <h3 class="text-2xl font-semibold text-primary">{workshop.title}</h3>
       <p><span class="font-bold">Objetivo:</span> {workshop.objective}</p>
       <p><span class="font-bold">Dirigido:</span> {workshop.audience}</p>
       <p><span class="font-bold">Duración:</span> {workshop.duration}</p>
       <p><span class="font-bold">Modalidad:</span> {workshop.modality}</p>
     </div>
     <!-- Contenedor de la imagen -->
-    <div class="md:pr-6">
+    <div class="md:pr-6"> <!-- Usamos padding-right para margen interno en pantallas medianas -->
       <Image
         class="h-full w-full object-cover rounded-lg shadow-lg"
-        src={workshopImage}
+        src={astronautImage}
         widths={widths}
         sizes={sizes}
         loading="eager"
-        alt="Imagen representativa del taller"
+        alt="A floating astronaut in a space suit"
       />
     </div>
   </div>

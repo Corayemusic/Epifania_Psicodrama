@@ -1,4 +1,3 @@
-
 ---
 import { Image } from "astro:assets";
 import workshopImage from '../assets/workshop-image.png'; // Ruta de la imagen

@@ -25,13 +25,13 @@ const widths = [320, 640, 1280]; // Resoluciones deseadas
 const sizes = '(max-width: 768px) 100vw, 50vw'; // Configuración responsiva
 ---
 
-<section class="space-y-8">
+<section class="space-y-8 px-4 md:px-8">
   <h2 class="text-3xl font-bold text-center text-primary">{title}</h2>
   <p class="text-lg text-center text-offset max-w-prose mx-auto">{description}</p>
   
   <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
     <!-- Contenedor del texto -->
-    <div class="space-y-6 md:ml-6"> <!-- Agregado margen izquierdo para pantallas medianas en adelante -->
+    <div class="space-y-6 md:pl-6"> <!-- Usamos padding-left para margen interno en pantallas medianas -->
       <h3 class="text-2xl font-semibold text-primary">{workshop.title}</h3>
       <p><span class="font-bold">Objetivo:</span> {workshop.objective}</p>
       <p><span class="font-bold">Dirigido:</span> {workshop.audience}</p>
@@ -39,7 +39,7 @@ const sizes = '(max-width: 768px) 100vw, 50vw'; // Configuración responsiva
       <p><span class="font-bold">Modalidad:</span> {workshop.modality}</p>
     </div>
     <!-- Contenedor de la imagen -->
-    <div class="md:mr-6"> <!-- Agregado margen derecho para pantallas medianas en adelante -->
+    <div class="md:pr-6"> <!-- Usamos padding-right para margen interno en pantallas medianas -->
       <Image
         class="h-full w-full object-cover rounded-lg shadow-lg"
         src={astronautImage}

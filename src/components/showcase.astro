@@ -3,6 +3,8 @@ import { getCollection } from "astro:content";
 import ContentSection from "~/components/content-section.astro";
 import ShowcaseCard from "~/components/showcase-card.astro";
 import PsicodramaSection from '~/components/PsicodramaSection.astro';
+import { Image } from "astro:assets";
+import TestimonialImage from "~/assets/astronaut.png"; // Cambia por la ruta correcta de tu imagen.
 
 const featuredSites = await getCollection(
   "showcase",
@@ -13,6 +15,7 @@ const orderedSites = featuredSites.sort(
 );
 ---
 <PsicodramaSection />
+<TestimonialSection />
 <ContentSection title="Showcase" id="showcase">
   <Fragment slot="lead">
     Astro is <span class="text-primary">versatile</span>.{" "}

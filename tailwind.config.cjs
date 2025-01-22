@@ -1,3 +1,4 @@
+
 const defaultTheme = require("tailwindcss/defaultTheme");
 
 module.exports = {
@@ -8,9 +9,8 @@ module.exports = {
         sans: ["Inter Variable", ...defaultTheme.fontFamily.sans],
       },
       colors: {
-        primary: "#560576", // Cambia el color primario aquí
+        primary: "var(--color-primary)",
         secondary: "var(--color-secondary)",
-        purpleCustom: "#560576", // Agrega el color con un nombre personalizado
       },
       textColor: {
         default: "var(--color-text)",

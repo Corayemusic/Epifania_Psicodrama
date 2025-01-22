@@ -6,7 +6,7 @@ import PsicodramaSection from '~/components/PsicodramaSection.astro';
 import TestimonialSection from "~/components/TestimonialSection.astro";// Cambia por la ruta correcta de tu imagen.
 
 const featuredSites = await getCollection(
-  "showcase",
+  "Videos",
   ({ data }) => "featured" in data,
 );
 const orderedSites = featuredSites.sort(

@@ -4,6 +4,7 @@ import ContentSection from "~/components/content-section.astro";
 import ShowcaseCard from "~/components/showcase-card.astro";
 import PsicodramaSection from '~/components/PsicodramaSection.astro';
 import TestimonialSection from "~/components/TestimonialSection.astro";// Cambia por la ruta correcta de tu imagen.
+import Psicodramapedagogico from "~/components/Psicodramapedagogico.astro";
 
 const featuredSites = await getCollection(
   "showcase",
@@ -15,6 +16,10 @@ const orderedSites = featuredSites.sort(
 ---
 <PsicodramaSection />
 <TestimonialSection />
+<Psicodramapedagogico />
+
+
+
 <ContentSection title="Videos" id="showcase">
   <Fragment slot="lead">
     Hablamos sobre <span class="text-primary">psicodrama</span>{" "}

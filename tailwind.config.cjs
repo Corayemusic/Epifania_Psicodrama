@@ -8,8 +8,9 @@ module.exports = {
         sans: ["Inter Variable", ...defaultTheme.fontFamily.sans],
       },
       colors: {
-        primary: "var(--color-primary)",
+        primary: "#560576", // Cambia el color primario aquí
         secondary: "var(--color-secondary)",
+        purpleCustom: "#560576", // Agrega el color con un nombre personalizado
       },
       textColor: {
         default: "var(--color-text)",
@@ -29,3 +30,4 @@ module.exports = {
   },
   plugins: [require("tailwindcss-fluid-type")],
 };
+

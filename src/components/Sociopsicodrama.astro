@@ -1,53 +1,54 @@
 ---
 import { Image } from "astro:assets";
-import WorkshopImage from "../assets/workshop-image.png"; // Cambia por la ruta de tu imagen
+import workshopImage from '../assets/workshop-image.png'; // Ruta de la imagen
 
-const title = "Taller de Experiencia Grupal Sociopsicodramática";
+const title = "Psicodrama Pedagógico";
 const description = `
-Uso del método Online, presencial y mixto para espacios sociales que buscan generar cooperación, enriquecer la comunidad y la inteligencia colectiva. Fortalecer la participación social de las comunidades, barrios, grupos y movimientos sociales. Acompañar en la indagación, análisis de problemática y posibles soluciones de y para la comunidad. Se realizan actividades para conectar con situaciones sociales desde una mirada personal-emocional formando espacios de contención. El psicodrama puede ser un método de investigación participativa que posibilita el acontecer grupal y la transformación. Prevención de factores de riesgo y promoción de factores de cuidado comunitario. Apoyamos en el diseño de entregables interactivos dirigidos a donantes y para sensibilización a través de: historias profundas de personas, blogs dinámicos, mini-museos, cartografías y otras herramientas creativas.
+Aprender el método del psicodrama en remoto y/o presencial, para posibilitar una formación integral aplicable al ámbito de la salud: psicoterapéuticos, holísticos, tanatológicos, etc. Ámbito de la educación: escuelas, universidades, organizaciones; Ámbito comunitario: gestores culturales y comunitarios.
+Articulando teoría-práctica en las dimensiones racionales y afectivas presentes en el proceso de enseñanza-aprendizaje. Construcción del conocimiento a nivel individual, colectivo e interpersonal.
 `;
 
 const workshop = {
-  title: "Taller de Crecimiento Personal",
+  title: "Taller de Herramientas Creativas con Psicodrama para Tanatólog@s",
   objective: `
-    Definirás de acuerdo a las necesidades e intereses del grupo el tema a desarrollar en las sesiones, como fortalecer lazos, sensibilizarse de las diferencias y expresar sus inquietudes en un entorno seguro sobre los acontecimientos grupales y sociales.
+    Conocer sobre la historia del psicodrama, sus metodologías y experimentar de manera vivencial, para aprender y expandir los recursos creativos terapéuticos grupales. Para ser utilizados en espacios presenciales o virtuales (Zoom).
   `,
-  audience: "Colectivos, empresas, organizaciones, comunidades, etc.",
-  duration: "2 horas una sesión semanal (el número de sesiones lo define el grupo)",
+  audience: `
+    Tanatólog@s experimentados, terapeutas, psicólog@s, estudiantes de tanatología, logoterapia y psicología, personas que acompañan a otras en sus procesos emocionales o realizan actividades afines.
+  `,
+  duration: "9 horas (3 horas por sesión semanal)",
   modality: "Opcional híbrido, presencial o vía ZOOM.",
 };
 
 const widths = [320, 640, 1280]; // Resoluciones deseadas
-const sizes = "(max-width: 768px) 100vw, 50vw"; // Configuración responsiva
+const sizes = '(max-width: 768px) 100vw, 50vw'; // Configuración responsiva
 ---
 
-<section class="space-y-8 px-4 md:px-8">
-  <h2 class="text-3xl font-bold text-center text-primary">{title}</h2>
-  <p class="text-lg text-center text-offset max-w-prose mx-auto">{description}</p>
-
+<section class="space-y-8 px-4 md:px-8 bg-purple-100 py-12">
+  <h2 class="text-3xl font-bold text-center text-purple-800">{title}</h2>
+  <p class="text-lg text-center text-purple-700 max-w-prose mx-auto">{description}</p>
+  
   <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
     <!-- Contenedor del texto -->
     <div class="space-y-6 md:pl-6">
-      <h3 class="text-2xl font-semibold text-primary">{workshop.title}</h3>
+      <h3 class="text-2xl font-semibold text-purple-800">{workshop.title}</h3>
       <p><span class="font-bold">Objetivo:</span> {workshop.objective}</p>
       <p><span class="font-bold">Dirigido:</span> {workshop.audience}</p>
       <p><span class="font-bold">Duración:</span> {workshop.duration}</p>
       <p><span class="font-bold">Modalidad:</span> {workshop.modality}</p>
     </div>
-
     <!-- Contenedor de la imagen -->
     <div class="md:pr-6">
       <Image
         class="h-full w-full object-cover rounded-lg shadow-lg"
-        src={WorkshopImage}
+        src={workshopImage}
         widths={widths}
         sizes={sizes}
         loading="eager"
-        alt="Participantes del taller"
+        alt="Imagen representativa del taller"
       />
     </div>
   </div>
 </section>
-
 
 

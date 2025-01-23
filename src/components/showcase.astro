@@ -8,8 +8,8 @@ import Psicodramapedagogico from "~/components/Psicodramapedagogico.astro";
 import Testimonial2 from "~/components/Testimonial2.astro"
 import Testimonial3 from "~/components/Testimonial3.astro"
 import Testimonial4 from "~/components/Testimonial4.astro"
-import Sociopsicodrama from "~/components/Sociopsicodrama.astro"
-import Psicodrama-organizacional from "~/components/Psicodrama-organizacional.astro"
+import sociopsicodrama from "~/components/sociopsicodrama.astro"
+import psicodrama-organizacional from "~/components/psicodrama-organizacional.astro"
 
 
 const featuredSites = await getCollection(
@@ -24,7 +24,7 @@ const orderedSites = featuredSites.sort(
 <TestimonialSection />
 <Psicodramapedagogico />
 <Testimonial2 />
-<Sociopsicodrama/>
+<sociopsicodrama/>
 <Testimonial3 />
 <Testimonial4 />
 

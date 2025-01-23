@@ -2,6 +2,7 @@
 import { getCollection } from "astro:content";
 import ContentSection from "~/components/content-section.astro";
 import ShowcaseCard from "~/components/showcase-card.astro";
+import Psicodramapedagogico from "~/components/Psicodramapedagogico.astro";
 
 const featuredSites = await getCollection(
   "showcase",
@@ -11,7 +12,7 @@ const orderedSites = featuredSites.sort(
   (a, b) => a.data.featured! - b.data.featured!,
 );
 ---
-
+<Psicodramapedagogico />
 <ContentSection title="Videos" id="showcase">
   <Fragment slot="lead">
     Astro is <span class="text-primary">versatile</span>.{" "}

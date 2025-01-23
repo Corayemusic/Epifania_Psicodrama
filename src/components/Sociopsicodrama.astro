@@ -1,61 +1,53 @@
 ---
-import WorkshopImage from "../assets/workshop-image.png"; // Cambia por la ruta de tu imagen.
+import { Image } from "astro:assets";
+import WorkshopImage from "../assets/workshop-image.png"; // Cambia por la ruta de tu imagen
 
-const titlesColor = "#560576";
-const workshopDetails = {
-  title: "Taller de Experiencia Grupal Sociopsicodramática",
+const title = "Taller de Experiencia Grupal Sociopsicodramática";
+const description = `
+Uso del método Online, presencial y mixto para espacios sociales que buscan generar cooperación, enriquecer la comunidad y la inteligencia colectiva. Fortalecer la participación social de las comunidades, barrios, grupos y movimientos sociales. Acompañar en la indagación, análisis de problemática y posibles soluciones de y para la comunidad. Se realizan actividades para conectar con situaciones sociales desde una mirada personal-emocional formando espacios de contención. El psicodrama puede ser un método de investigación participativa que posibilita el acontecer grupal y la transformación. Prevención de factores de riesgo y promoción de factores de cuidado comunitario. Apoyamos en el diseño de entregables interactivos dirigidos a donantes y para sensibilización a través de: historias profundas de personas, blogs dinámicos, mini-museos, cartografías y otras herramientas creativas.
+`;
+
+const workshop = {
+  title: "Taller de Crecimiento Personal",
   objective: `
-    Definirás de acuerdo a las necesidades e intereses del grupo el tema a desarrollar en las sesiones como fortalecer lazos, sensibilizarse de las diferencias y expresar sus inquietudes en un entorno seguro, sobre los acontecimientos grupales y sociales.
+    Definirás de acuerdo a las necesidades e intereses del grupo el tema a desarrollar en las sesiones, como fortalecer lazos, sensibilizarse de las diferencias y expresar sus inquietudes en un entorno seguro sobre los acontecimientos grupales y sociales.
   `,
   audience: "Colectivos, empresas, organizaciones, comunidades, etc.",
   duration: "2 horas una sesión semanal (el número de sesiones lo define el grupo)",
   modality: "Opcional híbrido, presencial o vía ZOOM.",
 };
+
+const widths = [320, 640, 1280]; // Resoluciones deseadas
+const sizes = "(max-width: 768px) 100vw, 50vw"; // Configuración responsiva
 ---
 
-<section class="px-6 py-12 sm:px-12 sm:py-16 bg-white">
-  <div class="max-w-6xl mx-auto">
-    <!-- Título principal -->
-    <h2 class="text-center text-3xl sm:text-4xl font-bold mb-8 text-custom-color">
-      SOCIOPSICODRAMA
-    </h2>
+<section class="space-y-8 px-4 md:px-8">
+  <h2 class="text-3xl font-bold text-center text-primary">{title}</h2>
+  <p class="text-lg text-center text-offset max-w-prose mx-auto">{description}</p>
 
-    <!-- Descripción -->
-    <p class="text-center text-lg sm:text-xl leading-relaxed max-w-4xl mx-auto mb-10">
-      Uso del método Online, presencial y mixto para espacios sociales que buscan generar cooperación, enriquecer la comunidad y la inteligencia colectiva. Fortalecer la participación social de las comunidades, barrios, grupos y movimientos sociales. Acompañar en la indagación, análisis de problemática y posibles soluciones de y para la comunidad. Se realizan actividades para conectar con situaciones sociales desde una mirada personal-emocional formando espacios de contención. El psicodrama puede ser un método de investigación participativa que posibilita el acontecer grupal y la transformación. Prevención de factores de riesgo y promoción de factores de cuidado comunitario. Apoyamos en el diseño de entregables interactivos dirigido a donantes y para sensibilización a través de: historias profundas de personas; blogs dinámicos; mini-museos, cartografías y otras.
-    </p>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+    <!-- Contenedor del texto -->
+    <div class="space-y-6 md:pl-6">
+      <h3 class="text-2xl font-semibold text-primary">{workshop.title}</h3>
+      <p><span class="font-bold">Objetivo:</span> {workshop.objective}</p>
+      <p><span class="font-bold">Dirigido:</span> {workshop.audience}</p>
+      <p><span class="font-bold">Duración:</span> {workshop.duration}</p>
+      <p><span class="font-bold">Modalidad:</span> {workshop.modality}</p>
+    </div>
 
-    <!-- Sección de imagen y detalles -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-      <!-- Imagen -->
-      <div class="flex justify-center">
-        <img
-          src={WorkshopImage}
-          alt="Participantes del taller"
-          class="rounded-lg shadow-lg max-w-full"
-        />
-      </div>
-
-      <!-- Detalles del taller -->
-      <div class="space-y-6">
-        <h3 class="text-2xl font-semibold text-custom-color">
-          {workshopDetails.title}
-        </h3>
-        <p>
-          <span class="font-bold">Objetivo:</span> {workshopDetails.objective}
-        </p>
-        <p>
-          <span class="font-bold">Dirigido:</span> {workshopDetails.audience}
-        </p>
-        <p>
-          <span class="font-bold">Duración:</span> {workshopDetails.duration}
-        </p>
-        <p>
-          <span class="font-bold">Modalidad:</span> {workshopDetails.modality}
-        </p>
-      </div>
+    <!-- Contenedor de la imagen -->
+    <div class="md:pr-6">
+      <Image
+        class="h-full w-full object-cover rounded-lg shadow-lg"
+        src={WorkshopImage}
+        widths={widths}
+        sizes={sizes}
+        loading="eager"
+        alt="Participantes del taller"
+      />
     </div>
   </div>
 </section>
+
 
 

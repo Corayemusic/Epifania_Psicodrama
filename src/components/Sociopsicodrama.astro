@@ -1,53 +1,25 @@
 ---
 import { Image } from "astro:assets";
-import astronautImage from '../assets/astronaut.png'; // Ruta de la imagen en la carpeta assets
-
-const title = "Psicodrama Psicoterapéutico e Inteligencia Espiritual";
-const description = `
-Uso del método del psicodrama en remoto y presencial, en diferentes espacios de sanación vincular, utilizando el factor de espontaneidad/creatividad para lograr un equilibrio cuerpo, mente y espíritu gestionando las emociones. Integrando historias transgeneracionales, liberando patrones que bloquean la expansión personal, para ello se utiliza también la inteligencia espiritual para trascender el ego conectando con la esencia.
-
-Primera sesión de psicoterapia bipersonal sin costo.
-`;
-
-const workshop = {
-  title: "Taller de Crecimiento Interior:",
-  objective: `
-    Experimentar el desarrollo personal en grupalidad y adquirir estrategias para tu autoobservación y autoexploración.
-  `,
-  audience: `
-    A ti que quieres mejorar algún aspecto de ti mism@. Si trabajas atendiendo a otras personas, esto es IDEAL para ti.
-  `,
-  duration: "2 horas una sesión semanal (Ciclo de 8 sesiones)",
-  modality: "Presencial o vía ZOOM.",
-};
-
-const widths = [320, 640, 1280]; // Resoluciones deseadas
-const sizes = '(max-width: 768px) 100vw, 50vw'; // Configuración responsiva
+import TestimonialImage from "~/assets/astronaut.png"; // Cambia por la ruta correcta de tu imagen.
 ---
 
-<section class="space-y-8 px-4 md:px-8">
-  <h2 class="text-3xl font-bold text-center text-primary">{title}</h2>
-  <p class="text-lg text-center text-offset max-w-prose mx-auto">{description}</p>
-  
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-    <!-- Contenedor del texto -->
-    <div class="space-y-6 md:pl-6"> <!-- Usamos padding-left para margen interno en pantallas medianas -->
-      <h3 class="text-2xl font-semibold text-primary">{workshop.title}</h3>
-      <p><span class="font-bold">Objetivo:</span> {workshop.objective}</p>
-      <p><span class="font-bold">Dirigido:</span> {workshop.audience}</p>
-      <p><span class="font-bold">Duración:</span> {workshop.duration}</p>
-      <p><span class="font-bold">Modalidad:</span> {workshop.modality}</p>
+<section class="relative text-white px-8 py-16 sm:px-16 sm:py-24" style="background-color: #560576;">
+  <div class="max-w-4xl mx-auto text-center">
+    <div class="text-4xl sm:text-5xl font-extrabold text-white mb-6">
+      <span class="inline-block">&ldquo;</span>
     </div>
-    <!-- Contenedor de la imagen -->
-    <div class="md:pr-6"> <!-- Usamos padding-right para margen interno en pantallas medianas -->
+    <p class="text-base sm:text-lg leading-relaxed"> <!-- Tamaño de fuente ajustado -->
+    Un taller súper poderoso, se logró una experiencia sensorial que envolvió al grupo y no solo ayudó al tanatólogo participante, también a los otros que teníamos casos similares con sensaciones fuertes que no podíamos compartir. Nos ayudó a liberar a través de la empatía y también los ejercicios de respiración (Participante del diplomado para tanatólogos). 
+    </p>
+    <div class="mt-8">
       <Image
-        class="h-full w-full object-cover rounded-lg shadow-lg"
-        src={astronautImage}
-        widths={widths}
-        sizes={sizes}
-        loading="eager"
-        alt="A floating astronaut in a space suit"
+        src={TestimonialImage}
+        alt="Mariana Malváez González"
+        class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-white"
       />
+      <h3 class="text-lg font-semibold"> WELWY CEJA Z</h3>
+      <p class="text-sm">Doula y Tanatóloga</p>
+      <p class="text-sm">Querétaro, México</p>
     </div>
   </div>
 </section>
